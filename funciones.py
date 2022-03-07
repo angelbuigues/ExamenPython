@@ -8,11 +8,12 @@ def encontrar_menores(diccionario,letra):
     Returns:
       resultado: ej. ['AUNQUE','ABINAR']
     """
+    resultado=[]#la lista se tiene que crear fuera del bucle
     for clave in diccionario:
-        for palabra in diccionario[clave]:
-            if palabra[0] < letra:
-                resultado=[]
-                resultado.append(palabra)
+        #for palabra in diccionario[clave]:
+        palabra = diccionario[clave]
+        if palabra[0] < letra:
+            resultado.append(palabra)
     return resultado
 
 def add_client(clients_list,nif,name,address,phone,email):
