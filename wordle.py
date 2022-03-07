@@ -27,11 +27,21 @@ class Wordle:
         same_position: Lista de posiciones de word cuyas letras coinciden en la misma posición en secret. En el caso anterior: [0]
         same_letter: Lista de posiciones de word cuyas letras están en secret pero en posiciones distintas. En el caso anterior: [1,2]
       """
+      j = 0
+      l = 0
+      same_position = []
+      same_letter = []
       for i in range(word[:]):
         if word[i] == secret[i]:
-          same_position = 
+          same_position[j] = word[i]
+          j+=j
+        for c in range(secret[:]):
+          if word[i] == secret[c]:
+            same_letter[l] = word[i] 
+            l+=l
+      return same_letter, same_position
 
-  def print_word():
+  def print_word(word, same_position, same_letter):
       """Dada una palabra, una lista same_position y otra lista same_letter, esta función creará un string donde aparezcan en mayúsculas las letras de la palabra que ocupen las posiciones de same_position, en minúsculas las letras de la palabra que ocupen las posiciones de same_letter y un guión (-) en el resto de posiciones
       Args:
         word: Una palabra. Ej. "CAMPO"
@@ -40,6 +50,15 @@ class Wordle:
       Returns:
         transformed: La palabra aplicando las transformaciones. En el caso anterior: "Cam--"
       """
+      transformed = []
+      for i in range(word[:]):
+        if same_position[i] 
+        transformed[i] = same_position[i]
+        tr
+
+
+
+
       
   def choose_secret_advanced():
       """Dado un nombre de fichero, esta función filtra solo las palabras de 5 letras que no tienen acentos (á,é,í,ó,ú). De estas palabras, la función devuelve una lista de 15 aleatorias no repetidas y una de estas 15, se selecciona aleatoriamente como palabra secret.
