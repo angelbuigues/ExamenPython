@@ -10,8 +10,8 @@ def encontrar_menores(diccionario,letra):
     """
     resultado=[]#la lista se tiene que crear fuera del bucle
     for clave in diccionario:
-        #for palabra in diccionario[clave]:
-        palabra = diccionario[clave]
+        #for palabra in diccionario[clave]: #este bucle no tenia sentido, ya que palabra era un simple numero que empezaba por 0 para contar cada vuelta del bucle
+        palabra = diccionario[clave]#lo que se tiene que hacer es que la palabra sea igual a la palabra de la posicion del diccionario que queremos comprobar
         if palabra[0] < letra:
             resultado.append(palabra)
     return resultado
@@ -26,7 +26,7 @@ def add_client(clients_list,nif,name,address,phone,email):
       phone
       email
     """
-    clients_list[nif] = {
+    clients_list[nif] = {#yo diria que esta función es correcta
         nif: {'name': name,
               'address': address,
               'phone': phone,
@@ -45,10 +45,10 @@ def repartir_cartas(cartas_iniciales,repeticiones):
     combinaciones={}
     for i in range(1,repeticiones+1):
         cartas_aleatorias = cartas_iniciales 
-        combinaciones["repeticion"+str(i)]=[]
+        combinaciones["repeticion"+str(i)]={}# para un diccionario se pone este simbolo y no este []
         for j in range(0,5):
             carta=random.choice(cartas_aleatorias)
-            combinaciones["repeticion"+str(i)].append(carta)
+            combinaciones["repeticion"+str(i)] = carta#en un diccionario se añaden de esta forma los nuevos valores
             cartas_aleatorias.remove(carta)
 
     return combinaciones
